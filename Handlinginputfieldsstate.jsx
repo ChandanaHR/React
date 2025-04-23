@@ -55,6 +55,27 @@ function Input() {
 }
 export default Input
 
+//Fourth way
+import {useState} from 'react'
+function Input() {
+    const[name,setname] = useState("");
+    function handlechange(e) {
+        const value = e.target.value
+        console.log(value)
+        setname(value)
+    }
+    return (
+        <div>
+            <form>
+               <h3>Enter your name: </h3> <input onChange={function demo(e){
+                                                            return handlechange(e)
+                                                          }} type="text" value={name}></input>
+            </form>
+        </div>
+    )
+}
+export default Input
+
 //App.jsx
 import Input from "./components/Input"
 function App() {
