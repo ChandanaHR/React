@@ -1,0 +1,63 @@
+The lifecycle refers to the various stages a component goes through. These stages allow developers to run specific code at key moments, such as when the component is created, updated, or removed
+There are three main phases of the React component lifecycle
+Mounting - Initialization, renders, and mounts the component (componentDidMount())
+Updation - Forprops(getDerivedStateFromProps) : ForState(setState()) (componentDidUpdate())
+ComponentWillUnMount()
+
+Mounting - Mounting refers to the process of creating and inserting a component into the DOM for the first time in a React application
+componentDidMount() - In React, componentDidMount() is a lifecycle method in React that is called once a component has been rendered and placed in the DOM. This method is invoked only once during the 
+lifecycle of a component, immediately after the first render, which is why it is useful for operations like fetching data, setting up subscriptions, and interacting with the DOM.
+           
+//Welcome.jsx file
+import React from 'react';
+class Welcome extends React.Component{
+    //The constructor() is the first method called when the component is created.
+    constructor(props){
+        super(props);
+        //super(props) calls the parent class constructor and gives access to this.props.
+        this.state = {
+            message : "Loading...."
+        };
+        //Initializes state with a property called message.
+        console.log("Component is being created");
+    }
+    componentDidMount() {
+    console.log('componentDidMount: Component has been mounted');
+    // Simulate data loading
+    setTimeout(() => {
+      this.setState({ message: 'Welcome to React!' });
+    }, 2000);
+  }
+  render() {
+    console.log('Render: Component is rendering');
+    return (
+      <div>
+        <h2>{this.state.message}</h2>
+      </div>
+    );
+  }
+}
+
+//Note: In React class components, the lifecycle begins when the component is instantiated (created) — and this happens in the constructor().
+//1)constructor: Component is created,initial state is set=>But component is not added to DOM
+//2)render: JSX is returned to be displayed.=>Right after construction, before mounting.
+//3)DOM is updated: React inserts the component into the DOM.=>After render.
+//4)componentDidMount()	Runs after component is mounted.	=>Perfect for AJAX/data fetching.
+
+//App.jsx
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Welcome from "./Welcome"
+
+function App() {
+  return (
+    <div>
+      <h1>React app</h1>
+      <Welcome/>
+    </div>
+  )
+}
+export default App
+
