@@ -21,7 +21,7 @@ class Componentdidupdate extends React.Component {
     componentDidMount() {
         console.log("Component Mounted")
     }
-    componentDidUpdate(prevstate) {
+    componentDidUpdate(prevprops,prevstate) {
         console.log("Component did update")
         console.log("Previous count value",prevstate.count)
         console.log("Current count value",this.state.count)
