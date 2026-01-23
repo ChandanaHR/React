@@ -1,1 +1,9 @@
 API Key: AIzaSyAKx0vEsTKPD2BYLIbWWsAwnldMAAjfbyE
+
+
+Search Engine Name: My Search Engine
+<script async src="https://cse.google.com/cse.js?cx=26fa341cd45cf49bc">
+</script>
+<div class="gcse-search"></div>
+Search Engine Id: 26fa341cd45cf49bc
+Public URL: https://cse.google.com/cse?cx=26fa341cd45cf49bc
