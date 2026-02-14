@@ -1,3 +1,4 @@
+Animate a div sliding left → right on button click. in react
 //React2.jsx
 import {useState} from "react"
 import "../App1.css"
